@@ -123,10 +123,17 @@ TSAN_COMPILER_FLAGS = [
     '-DTHREAD_SANITIZER',
 ]
 
+# # https://github.com/aws/aws-graviton-getting-started/blob/main/c-c++.md
+# GRAVITON_COMPILER_FLAGS = [
+#     '-march=armv8.2-a+fp16+rcpc+dotprod+crypto',
+#     '-mtune=neoverse-n1',
+#     '-mno-outline-atomics',
+# ]
+
 # https://github.com/aws/aws-graviton-getting-started/blob/main/c-c++.md
 GRAVITON_COMPILER_FLAGS = [
-    '-march=armv8.2-a+fp16+rcpc+dotprod+crypto',
-    '-mtune=neoverse-n1',
+    '-march=armv8-a+simd+crypto+crc+sb',
+    '-mtune=cortex-a72',
     '-mno-outline-atomics',
 ]
 
